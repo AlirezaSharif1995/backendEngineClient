@@ -20,8 +20,6 @@ namespace BackendEngine.Editor
             if (GameObject.FindObjectOfType<GameManager>() == null)
             {
                 GameObject gameObject = new GameObject("GameManager");
-                AppConfig config = new AppConfig();
-                gameObject.AddComponent<GameManager>();
                 gameObject.AddComponent<AppConfig>();
 
                 // Mark the scene as dirty to ensure the new GameObject is saved
