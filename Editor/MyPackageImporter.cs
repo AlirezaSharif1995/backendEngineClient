@@ -10,14 +10,16 @@ public class MyPackageImporter : AssetPostprocessor
         foreach (var assetPath in importedAssets)
         {
             // Check if the imported asset is your package (e.g., a specific file or folder in your package)
-              // Define the source and destination paths
+            if (assetPath.Contains("BackendEngin"))
+            {
+                // Define the source and destination paths
                 string sourcePath = "Packages/com.asoft.backendengine/Editor/BackendEngin";
-                string destinationPath = "Assets/BackendEngin";
+                string destinationPath = "Assets/";
 
                 // Copy the folder and its contents
                 CopyFolder(sourcePath, destinationPath);
                 Debug.Log("Copied folder to: " + destinationPath);
-            
+            }
         }
     }
 
@@ -25,7 +27,7 @@ public class MyPackageImporter : AssetPostprocessor
     {
         if (!Directory.Exists(sourceFolder))
         {
-            Debug.LogError("Source folder does not exist: " + sourceFolder);
+            Debug.LogError("Source folder does not exist:" + sourceFolder);
             return;
         }
 
