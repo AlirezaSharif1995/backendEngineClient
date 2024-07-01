@@ -7,7 +7,7 @@
   "dependencies": {},
   "author": {
     "name": "Alireza sharif",
-    "email": "alirezasharif1995@gmail.com",
+    "email": "alirezasharif1995@gmail.com"
   },
   "repository": {
     "type": "git",
@@ -27,3 +27,4 @@
     }
   ]
 }
+
