@@ -11,7 +11,7 @@ public class MyPackageImporter : AssetPostprocessor
         {
             // Check if the imported asset is your package (e.g., a specific file or folder in your package)
               // Define the source and destination paths
-                string sourcePath = "Packages/com.asoft.backendengine@7454e51912/Editor/BackendEngin";
+                string sourcePath = "Packages/com.Backend Engine/Editor/BackendEngin";
                 string destinationPath = "Assets/BackendEngin";
 
                 // Copy the folder and its contents
