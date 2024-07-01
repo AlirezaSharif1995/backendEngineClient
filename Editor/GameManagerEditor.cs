@@ -7,15 +7,15 @@ public class BackendEnginePackageImporter
 {
     static BackendEnginePackageImporter()
     {
-        AssetDatabase.CreateFolder("Assets", "BackendEngine");
         EditorApplication.delayCall += CheckAndAddPrefab;
     }
 
     static void CheckAndAddPrefab()
     {
+        // This method is executed when the Editor starts and after a delay call
         string prefabPath = "Assets/Backend Engin/Prefabs/GameManager.prefab";
-        
-        // Check if the prefab exists in the project
+
+        // Load the prefab at the specified path
         GameObject existingPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
 
         if (existingPrefab == null)
@@ -25,22 +25,24 @@ public class BackendEnginePackageImporter
         }
 
         // Check if the prefab is already in the scene
-        GameObject prefabInScene = GameObject.Find("GameManager");
+        GameObject prefabInScene = GameObject.Find(existingPrefab.name);
 
         if (prefabInScene == null)
         {
-            // Create a new GameObject in the scene
+            // Instantiate the prefab into the scene
             GameObject prefabInstance = PrefabUtility.InstantiatePrefab(existingPrefab) as GameObject;
             prefabInstance.name = existingPrefab.name;
             Debug.Log("Prefab added to the scene: " + prefabInstance.name);
+
+            // Mark the scene as dirty to save changes
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
         else
         {
             Debug.Log("Prefab already exists in the scene: " + prefabInScene.name);
         }
 
-        // Refresh the Asset Database and save scene to apply changes
+        // Refresh the Asset Database to update changes
         AssetDatabase.Refresh();
-        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
 }
