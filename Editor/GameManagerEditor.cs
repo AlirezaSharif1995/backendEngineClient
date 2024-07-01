@@ -7,6 +7,7 @@ public class BackendEnginePackageImporter
 {
     static BackendEnginePackageImporter()
     {
+        AssetDatabase.CreateFolder("Assets", "BackendEngine");
         EditorApplication.delayCall += CheckAndAddPrefab;
     }
 
