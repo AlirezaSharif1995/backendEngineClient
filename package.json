@@ -1,0 +1,29 @@
+{
+  "name": "com.asoft.backendengine",
+  "version": "1.0.0",
+  "displayName": "Backend Engine",
+  "description": "A backend engine for managing user registration and login.",
+  "unity": "2020.3",
+  "dependencies": {},
+  "author": {
+    "name": "Alireza sharif",
+    "email": "alirezasharif1995@gmail.com",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlirezaSharif1995/backendEngineClient.git"
+  },
+  "keywords": [
+    "backend",
+    "user management",
+    "registration",
+    "login"
+  ],
+  "samples": [
+    {
+      "displayName": "Example Usage",
+      "description": "A sample scene demonstrating how to use the Backend Engine.",
+      "path": "Samples~/ExampleUsage"
+    }
+  ]
+}
